@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ee669ac198174e1022ebce4b6e6d6611",
+    "entities": [
+      {
+        "tableName": "Transaction",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`date` INTEGER NOT NULL, `source_qty` TEXT, `source_symbol` TEXT, `target_qty` TEXT, `target_symbol` TEXT, `fee_qty` TEXT, `fee_symbol` TEXT, PRIMARY KEY(`date`))",
+        "fields": [
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source.qty",
+            "columnName": "source_qty",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "source.symbol",
+            "columnName": "source_symbol",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "target.qty",
+            "columnName": "target_qty",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "target.symbol",
+            "columnName": "target_symbol",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fee.qty",
+            "columnName": "fee_qty",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fee.symbol",
+            "columnName": "fee_symbol",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "date"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ee669ac198174e1022ebce4b6e6d6611')"
+    ]
+  }
+}

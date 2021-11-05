@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Trading Log</string>
+    <string name="title_activity_new_transaction">NewTransaction</string>
+</resources>
